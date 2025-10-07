@@ -219,6 +219,99 @@
       </div>
     </figure>
 
+    <!-- Adjusted scene (Step 3): a third copy with small transforms, improved contrast, dashed fence, footpath, mailbox, and chimney smoke. -->
+    <figure id="scene-adjusted-figure">
+      <figcaption>Adjusted scene (Step 3)</figcaption>
+      <style>
+  /* Scoped styles for the adjusted SVG only */
+        #scene-adjusted .stroke-strong { stroke-width:2.5; stroke-linejoin:round }
+        #scene-adjusted .muted-fill { fill:#f7efe0 }
+        #scene-adjusted #fence-adjusted { stroke:#6b3f1f; stroke-width:3; stroke-dasharray:8 6 }
+        #scene-adjusted #path-door { stroke:#c9a66b; stroke-width:8; stroke-linecap:round; fill:none }
+        #scene-adjusted .mailbox { fill:#7b3e3e; stroke:#3b1d1d; stroke-width:1 }
+        #scene-adjusted .smoke { fill:#ddd; opacity:0.6 }
+      </style>
+      <div class="svg-wrap">
+        <svg id="scene-adjusted" viewBox="0 0 800 500" role="img" aria-labelledby="svg-title-adjusted svg-desc-adjusted">
+          <title id="svg-title-adjusted">House and Garden Illustration (Adjusted)</title>
+          <desc id="svg-desc-adjusted">Adjusted variant with small position tweaks, higher contrast, dashed fence, new footpath to door, a mailbox, and chimney smoke.</desc>
+
+          <!-- Sky & Grass (unchanged) -->
+          <rect x="0" y="0" width="800" height="300" fill="#79BEE6" />
+          <rect x="0" y="300" width="800" height="200" fill="#7CCD7C" />
+
+          <!-- Sun (circle) -->
+          <circle cx="110" cy="80" r="44" fill="#FFD54F" stroke="#E69B00" stroke-width="2.5" />
+
+          <!-- Cloud (ellipse) -->
+          <ellipse cx="640" cy="95" rx="68" ry="36" fill="#FFFFFF" stroke="#D0D0D0" />
+
+          <!-- Tree moved slightly left/up using a group transform for balance (small translate) -->
+          <g id="tree-adjusted" transform="translate(-20,-6)">
+            <rect x="680" y="240" width="18" height="90" fill="#6f3f1f" rx="2" class="stroke-strong" />
+            <circle cx="689" cy="220" r="56" fill="#2a7b45" stroke="#164f2a" stroke-width="1.5" />
+          </g>
+
+          <!-- House moved slightly right/down using a small translate for balance -->
+          <g id="house-adjusted" transform="translate(8,6)">
+            <rect x="260" y="200" width="220" height="150" class="muted-fill" stroke="#a67c42" stroke-width="2.5" rx="4" />
+            <polygon points="240,200 370,120 500,200" fill="#9f1a1a" stroke="#5e0000" stroke-width="2.5" />
+            <rect x="390" y="125" width="26" height="48" fill="#666" stroke="#222" stroke-width="1" />
+            <rect x="350" y="260" width="48" height="90" fill="#1f4fc0" stroke="#0f2f66" stroke-width="2.5" rx="3" />
+            <circle cx="388" cy="305" r="3.8" fill="#FFD700" />
+            <rect x="285" y="230" width="38" height="34" fill="#CFEFFF" stroke="#27494d" stroke-width="2.2" rx="2" />
+            <line x1="304" y1="230" x2="304" y2="264" stroke="#27494d" stroke-width="1.2" />
+            <line x1="285" y1="247" x2="323" y2="247" stroke="#27494d" stroke-width="1.2" />
+            <rect x="430" y="230" width="38" height="34" fill="#CFEFFF" stroke="#27494d" stroke-width="2.2" rx="2" />
+            <line x1="449" y1="230" x2="449" y2="264" stroke="#27494d" stroke-width="1.2" />
+            <line x1="430" y1="247" x2="468" y2="247" stroke="#27494d" stroke-width="1.2" />
+            <!-- subtle smoke group coming from chimney -->
+            <g id="smoke">
+              <ellipse class="smoke" cx="403" cy="118" rx="6" ry="3" />
+              <ellipse class="smoke" cx="409" cy="110" rx="8" ry="4" />
+              <ellipse class="smoke" cx="418" cy="100" rx="10" ry="5" />
+            </g>
+          </g>
+
+          <!-- Fence adjusted to be dashed for visual difference -->
+          <polyline id="fence-adjusted" points="40,360 40,330 70,330 70,360 70,330 100,330 100,360 100,330 130,330 130,360 130,330 160,330 160,360 160,330 190,330 190,360"
+                    fill="none" stroke-linejoin="round" />
+
+          <!-- Curved garden path (unchanged) -->
+          <path d="M 420 350 C 440 380, 480 420, 520 460" fill="none" stroke="#b88f5a" stroke-width="10" stroke-linecap="round" />
+
+          <!-- New curved stone footpath from door to main path -->
+          <!-- path-door: small curved path linking house door (approx door center) to the main path -->
+          <path id="path-door" d="M 374 350 Q 390 330 430 350" />
+
+          <!-- Decorative stones (unchanged) -->
+          <ellipse cx="450" cy="390" rx="6" ry="4" fill="#B99E78" />
+          <ellipse cx="475" cy="410" rx="5" ry="3" fill="#B99E78" />
+
+          <!-- Mailbox near the footpath: simple rect post + polygon box -->
+          <g id="mailbox" transform="translate(320,340)">
+            <!-- post -->
+            <rect x="-4" y="10" width="8" height="28" fill="#6b4a2b" />
+            <!-- box -->
+            <polygon class="mailbox" points="6,10 34,10 34,0 6,0" />
+            <!-- flag -->
+            <path d="M34 6 L42 10 L34 14 Z" fill="#c73b3b" />
+          </g>
+
+          <!-- Flowers (unchanged) -->
+          <circle cx="200" cy="380" r="5" fill="#FF69B4" />
+          <circle cx="220" cy="370" r="4" fill="#FFB6C1" />
+          <circle cx="240" cy="390" r="5" fill="#FF1493" />
+
+          <!-- Ground bed (unchanged) -->
+          <polygon points="520,360 540,340 560,360 540,380" fill="#7aa300" opacity="0.8" />
+
+          <!-- Caption text (slightly darker for contrast) -->
+          <text x="400" y="480" font-size="22" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" fill="#1f4f2f">A Peaceful Home &amp; Garden (Adjusted)</text>
+        </svg>
+      </div>
+    </figure>
+
     <p class="credits">SVG elements used: &lt;rect&gt;, &lt;circle&gt;, &lt;ellipse&gt;, &lt;line&gt;, &lt;polyline&gt;, &lt;polygon&gt;, &lt;path&gt;, &lt;text&gt; — Accessible title/description via aria-labelledby.</p>
   </main>
 </body>
